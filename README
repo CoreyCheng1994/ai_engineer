@@ -5,7 +5,7 @@
          cursor: .cursor/commands （可以是局部 也可以是全局）
          其他： 略
 
-2. 复制 doc_loader 到 项目根路径下（ 也就是 codex 运行的目录），并更名为 doc_loader.md
+2. 复制 doc_loader 到 项目根路径下（ 也就是 codex 运行的目录），并更名为 doc_loader.md。 修改里面的basepath为你自己的prompts/commands目录
 
 ## II. 已支持的功能：
 1. new_feature: 用于实现新的功能
