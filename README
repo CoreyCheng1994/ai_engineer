@@ -2,6 +2,7 @@
 
 1. 将项目clone到指定目录
    例如： codex: .codex （可以是局部 也可以是全局） 。然后重命名文件夹为 prompts
+         gemini: .gemini/commands （可以是局部 也可以是全局）
          cursor: .cursor/commands （可以是局部 也可以是全局）
          其他： 略
 
@@ -12,6 +13,8 @@
 2. upgrade_feature: 用于升级已有的功能
 3. tech_modify: 用新的技术栈替换旧的技术栈
 4. bugfix： 用于修复已有的功能中的 bug
+5. spec： 用于输出结构化需求文档
+6. special: 用于澄清spec中模糊的地方
 
 ## III. 其他说明
 可以在项目根目录下添加 codestyle 、 new_base 、 old_base文件来自定义代码和流程的偏好，注意不要加文件后缀名
