@@ -9,7 +9,7 @@ description: |
 ## 一、User Input
 
 ```text
-1. 加载以下提示词文档（按顺序，遵循 doc_loader.md 规则）：
+1. 加载以下提示词文档（按顺序，遵循 doc_loader 规则）：
    - ${old_base}
    - ${new_base}
    - ${codestyle}

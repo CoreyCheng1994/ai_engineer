@@ -2,7 +2,7 @@ description: 用于将项目中的某一个技术实现（如第三方依赖、�
 
 ## User Input
 
-1. 加载以下提示词文档（遵循 doc_loader.md 规则）：
+1. 加载以下提示词文档（遵循 doc_loader 规则）：
    
    ${old_base}
 
