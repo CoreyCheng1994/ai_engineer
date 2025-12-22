@@ -1,6 +1,5 @@
 description: 文档加载规则 - 定义如何读取和加载提示词文档
 
 ## 文档加载规则
-basepath=/Users/corey/.cursor/commands
 1. 优先加载当前文件夹下的 ${name}文件
-2. 如果没有，则加载用户自定义${basepath}/${name}的文件
+2. 如果没有，则加载用户自定义doc_loader所在目录下的${name}的文件
