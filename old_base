@@ -155,7 +155,7 @@ MVP 优先，逐步演进
 
 ## 四、代码规范（重要）
 
-代码风格必须严格遵循 @codestyle.md
+代码风格必须严格遵循 @codestyle
 
 若 workspace 中存在多个 codestyle 文件，优先级为：
 
