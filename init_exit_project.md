@@ -1,8 +1,6 @@
 ---
-description: Codex command - 从现有项目自动采集技术栈/目录信息，生成或补充项目宪法
+description: 从现有项目自动采集技术栈/目录信息，生成或补充项目宪法
 ---
-
-# 宪法生成命令（constitution_cmd）
 
 ## User Input
 
