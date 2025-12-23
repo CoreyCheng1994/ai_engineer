@@ -75,7 +75,7 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 ## 五、输出要求（真实落盘）
 
 ```text
-./{workspace}/mydoc/{taskname}-{date}/spec.md
+./{workspace}/mydoc/{date}-{taskname}/spec.md
 ```
 
 ---

@@ -108,7 +108,7 @@ details:  新的技术实现
 ```text
 ./{workspace}/mydoc/
 ├── catalog.md
-└── {taskname}-{date}/
+└── {date}-{taskname}/
     ├── framework.md   # 旧实现 / 新实现 / 测试与影响分析
     └── task.md        # todo / MVP / 执行状态
 ```

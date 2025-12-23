@@ -268,7 +268,7 @@ description: 修复 Bug
 ```text
 ./{workspace}/mydoc/
 ├── catalog.md
-└── {taskname}-{date}/
+└── {date}-{taskname}/
     ├── framework.md   # Bug 理解 / 定位 / 策略 / 验证 / 总结
     └── task.md        # todo / MVP / 状态
 ```

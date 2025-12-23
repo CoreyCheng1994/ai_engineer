@@ -291,7 +291,7 @@ details:  强调先冻结当前功能语义，再明确迭代目标，
 ```text
 ./{workspace}/mydoc/
 ├── catalog.md
-└── {taskname}-{date}/
+└── {date}-{taskname}/
     ├── framework.md   # 语义冻结 / 目标 / 策略 / 验收 / 总结
     └── task.md        # todo / MVP / 状态
 ```
