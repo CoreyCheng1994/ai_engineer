@@ -15,6 +15,9 @@
 4. bugfix： 用于修复已有的功能中的 bug
 5. spec： 用于输出结构化需求文档
 6. special: 用于澄清spec中模糊的地方
+7. use_fix： 用于将手写代码的改动归档入文档
+8. init: 用于初始化空白项目，生成项目“宪法”文件
+9. init_exit_project: 用于已有项目，生成项目“宪法”文件
 
 ## III. 其他说明
 可以在项目根目录下添加 codestyle 、 new_base 、 old_base文件来自定义代码和流程的偏好，注意不要加文件后缀名

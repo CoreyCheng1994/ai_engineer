@@ -8,6 +8,7 @@ description: 修复 Bug
 1. 加载以下提示词文档（按顺序，遵循 doc_loader.md 规则）：
    - ${old_base}
    - ${codestyle}
+   - ${constitution}（如存在，项目级基础规则）
 
 2. 我将提供一个 Bug 相关信息，可能包含：
    - 复现步骤 / 期望与实际行为
@@ -22,6 +23,14 @@ description: 修复 Bug
    $ARGUMENTS
 ````
 
+### 前置环境检查（强制）
+
+- 确认当前目录在 git 仓库内，且无未确认的其他任务改动；如有需先澄清
+- 若本次任务未在 `feature/{taskname}` 分支上，先创建/切换后再继续
+- 确认输出目录 `./{workspace}/mydoc/{date}-{taskname}/` 可写，不存在则创建
+- 按 doc_loader 规则检查所需 prompt 是否可读取，缺失时必须暂停并告知
+- 若修复涉及数据模型/存储或迁移，需额外加载并遵循 `data_rule`
+
 ---
 
 ## 二、总体原则（强制）
@@ -35,6 +44,23 @@ description: 修复 Bug
 - 不可复现的 Bug 允许基于证据推断推进
 - Root Cause 不强求，但尽量给出
 ```
+
+### OpenAPI 规范约束（强制）
+
+**OpenAPI 规范是 API 接口定义的唯一真源（Single Source of Truth）**
+
+* 若 Bug 涉及 API 接口：
+  * 必须首先查找并引用对应的 OpenAPI 规范文件
+  * 以 OpenAPI 规范为准判断接口行为是否正确
+  * 若代码实现与 OpenAPI 规范不一致：
+    - 以 OpenAPI 规范为准
+    - 必须修正代码实现以符合 OpenAPI 规范
+* 修复 API 相关 Bug 时：
+  * 必须确保修复后的实现符合 OpenAPI 规范
+  * 若修复涉及接口变更，必须同步更新 OpenAPI 规范文件
+* 在 framework.md 中记录 API 相关问题时：
+  * 必须标注对应的 OpenAPI 规范路径和操作 ID
+  * 格式：`[OpenAPI: {file_path}#/{operationId}]`
 
 ---
 
@@ -168,6 +194,7 @@ description: 修复 Bug
 2. 集成测试
 3. 最小复现代码 / 脚本
 4. 人工验证步骤（需说明原因）
+5. 主流程 E2E（优先使用 chrome MCP server）+ 全部单元测试通过视为通过标准；若无法落地需说明原因并暂停确认
 
 ---
 
@@ -245,6 +272,7 @@ description: 修复 Bug
 
 * Bug 场景验证通过
 * 相邻路径检查通过
+* 主流程 E2E（chrome MCP server 优先）通过，全部单元测试通过；否则需暂停并澄清
 
 ---
 
