@@ -53,9 +53,9 @@ details:  支持从多种信息来源理解需求，强制识别是否存在旧�
 - 所有结论必须可复盘
 ```
 
-### OpenAPI 规范约束（强制）
+### OpenAPI 规范约束（条件启用）
 
-**OpenAPI 规范是 API 接口定义的唯一真源（Single Source of Truth）**
+仅当 `constitution.md` 明确声明 OpenAPI 为接口唯一真源时，以下约束才生效。
 
 * 所有 API 接口设计必须基于 OpenAPI 规范文件
 * 在实现 API 接口前：
@@ -247,10 +247,10 @@ details:  支持从多种信息来源理解需求，强制识别是否存在旧�
 
 ### 4. 接口与数据设计
 - 对外接口
-  - 必须基于 OpenAPI 规范：[OpenAPI: {file_path}#/{operationId}]
-  - 若 OpenAPI 规范不存在，必须先创建
+  - 若宪法启用 OpenAPI 唯一真源：必须基于 OpenAPI 规范，[OpenAPI: {file_path}#/{operationId}]
+  - 若宪法启用 OpenAPI 唯一真源且规范不存在，必须先创建
 - 核心数据结构
-  - 请求/响应结构必须与 OpenAPI 规范一致
+  - 若宪法启用 OpenAPI 唯一真源：请求/响应结构必须与 OpenAPI 规范一致
 
 ### 5. 行为说明
 - 正常流程

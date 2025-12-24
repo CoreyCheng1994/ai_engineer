@@ -45,9 +45,9 @@ description: 修复 Bug
 - Root Cause 不强求，但尽量给出
 ```
 
-### OpenAPI 规范约束（强制）
+### OpenAPI 规范约束（条件启用）
 
-**OpenAPI 规范是 API 接口定义的唯一真源（Single Source of Truth）**
+仅当 `constitution.md` 明确声明 OpenAPI 为接口唯一真源时，以下约束才生效。
 
 * 若 Bug 涉及 API 接口：
   * 必须首先查找并引用对应的 OpenAPI 规范文件

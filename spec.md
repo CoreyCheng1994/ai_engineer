@@ -72,9 +72,9 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 
 ---
 
-## 四.五、OpenAPI 规范约束（强制）
+## 四.五、OpenAPI 规范约束（条件启用）
 
-**OpenAPI 规范是 API 接口定义的唯一真源（Single Source of Truth）**
+仅当 `constitution.md` 明确声明 OpenAPI 为接口唯一真源时，以下约束才生效。
 
 * 所有 API 接口定义必须基于 OpenAPI 规范文件
 * 若需求涉及 API 接口：
@@ -113,7 +113,7 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 - Git Branch：feature/{taskname}
 - 创建日期：
 - 需求状态：Draft / Clarifying / Approved
-- OpenAPI 规范路径：（如有）
+- OpenAPI 规范路径：（如宪法启用且存在）
 
 ---
 
@@ -147,10 +147,10 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 - 不变量：
 
 ##### API 接口（如有）
-- 接口定义：[OpenAPI: {file_path}#/{operationId}]
-- 请求参数：基于 OpenAPI 规范
-- 响应结构：基于 OpenAPI 规范
-- 若 OpenAPI 规范缺失：标注为澄清问题
+- 若宪法启用 OpenAPI 唯一真源：接口定义 [OpenAPI: {file_path}#/{operationId}]
+- 若宪法启用 OpenAPI 唯一真源：请求参数基于 OpenAPI 规范
+- 若宪法启用 OpenAPI 唯一真源：响应结构基于 OpenAPI 规范
+- 若宪法启用 OpenAPI 唯一真源且规范缺失：标注为澄清问题
 
 ##### 验证用例（Given / When / Then）
 - Given：
