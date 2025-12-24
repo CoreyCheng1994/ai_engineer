@@ -13,6 +13,8 @@ details:  新的技术实现
    
    ${old_base}
 
+   ${git_rules}
+
    ${codestyle}
    
    ${constitution}（如存在，项目级基础规则）
@@ -24,9 +26,8 @@ details:  新的技术实现
 
 ### 前置环境检查（强制）
 
-- 确认当前目录在 git 仓库内，且无未确认的其他任务改动；如有需先澄清
-- 若本次任务未在 `feature/{taskname}` 分支上，先创建/切换后再继续
-- 确认输出目录 `./{workspace}/mydoc/{date}-{taskname}/` 可写，不存在则创建
+- 遵循 `git_rules` 中的 Git 规则
+- 确认输出目录 `./mydoc/{date}-{taskname}/` 可写，不存在则创建
 - 按 doc_loader 规则检查所需 prompt 是否可读取，缺失时必须暂停并告知
 - 若涉及数据模型/存储或迁移，需额外加载并遵循 `data_rule`
 
@@ -93,7 +94,7 @@ details:  新的技术实现
 - 所有代码必须严格遵循：
   - `${codestyle}`
 - 若项目中存在多个 codestyle 定义：
-  - 优先级以 workspace 规则为准
+  - 优先级以 当前目录 规则为准
 - 若规范冲突：
   - 选择更严格的一条
   - 并在 framework.md 中注明原因
@@ -113,10 +114,10 @@ details:  新的技术实现
 
 ### 六、输出要求（真实落盘）
 
-所有分析与规划必须真实写入 workspace，文档结构遵循：
+所有分析与规划必须真实写入 当前目录，文档结构遵循：
 
 ```text
-./{workspace}/mydoc/
+./mydoc/
 ├── catalog.md
 └── {date}-{taskname}/
     ├── framework.md   # 旧实现 / 新实现 / 测试与影响分析

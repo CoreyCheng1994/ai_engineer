@@ -14,6 +14,7 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 ```text
 1. 加载以下提示词文档（按顺序，遵循 doc_loader.md 规则）：
    - ${old_base}
+   - ${git_rules}
    - ${constitution}（如存在，项目级基础规则）
 
 2. 按照上述文档所体现的工程价值观，
@@ -26,24 +27,15 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 
 ### 前置环境检查（强制）
 
-- 确认当前目录在 git 仓库内，若存在未提交的其他任务改动需先与我确认
-- 若本次任务未在 `feature/{taskname}` 分支上，先创建/切换后再继续
-- 确认输出目录 `./{workspace}/mydoc/{date}-{taskname}/` 可写，不存在则创建
+- 遵循 `git_rules` 中的 Git 规则
+- 确认输出目录 `./mydoc/{date}-{taskname}/` 可写，不存在则创建
 - 按 doc_loader 规则检查所需 prompt 是否可读取，缺失时必须暂停并告知
 
 ---
 
-## 二、Git 分支管理（强制）
+## 二、Git 规则引用（强制）
 
-```
-- 在开始处理本任务前，必须创建或切换到新的 Git 分支
-- 分支命名规则为：
-
-  feature/{taskname}
-
-- 所有本次任务产生的文档变更
-  必须提交在该 feature 分支上
-```
+- 遵循 `git_rules`
 
 ---
 
@@ -104,7 +96,7 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 ## 五、输出要求（真实落盘）
 
 ```text
-./{workspace}/mydoc/{date}-{taskname}/spec.md
+./mydoc/{date}-{taskname}/spec.md
 ```
 
 > spec 生成后，可按需运行 `special.md` 进行澄清质询；非强制，但如存在不确定性或输入模糊，建议执行后再进入后续流程

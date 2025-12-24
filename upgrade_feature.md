@@ -15,6 +15,7 @@ details:  强调先冻结当前功能语义，再明确迭代目标，
 ```text
 1. 加载以下提示词文档（遵循 doc_loader.md 规则）：
    ${old_base}
+   ${git_rules}
    ${codestyle}
    ${constitution}（如存在，项目级基础规则）
 
@@ -33,9 +34,8 @@ details:  强调先冻结当前功能语义，再明确迭代目标，
 
 ### 前置环境检查（强制）
 
-- 确认当前目录在 git 仓库内，且无未确认的其他任务改动；如有需先澄清
-- 若本次任务未在 `feature/{taskname}` 分支上，先创建/切换后再继续
-- 确认输出目录 `./{workspace}/mydoc/{date}-{taskname}/` 可写，不存在则创建
+- 遵循 `git_rules` 中的 Git 规则
+- 确认输出目录 `./mydoc/{date}-{taskname}/` 可写，不存在则创建
 - 按 doc_loader 规则检查所需 prompt 是否可读取，缺失时必须暂停并告知
 - 若迭代涉及数据模型/存储或迁移，需额外加载并遵循 `data_rule`
 
@@ -300,7 +300,7 @@ details:  强调先冻结当前功能语义，再明确迭代目标，
 ## 十一、输出结构（真实落盘）
 
 ```text
-./{workspace}/mydoc/
+./mydoc/
 ├── catalog.md
 └── {date}-{taskname}/
     ├── framework.md   # 语义冻结 / 目标 / 策略 / 验收 / 总结

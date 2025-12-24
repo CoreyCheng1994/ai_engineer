@@ -12,7 +12,7 @@ description: 从现有项目自动采集技术栈/目录信息，生成或补充
 
 3. 目标：
    - 生成新的宪法或补充已有宪法
-   - 输出路径：`./{workspace}/constitution.md`（可指定已有文件路径用于补充）
+   - 输出路径：`./constitution.md`（可指定已有文件路径用于补充）
 ```
 
 ## 执行步骤（Codex 应用）
@@ -36,7 +36,7 @@ description: 从现有项目自动采集技术栈/目录信息，生成或补充
 
 ## 输出
 
-- 宪法文档：`./{workspace}/constitution.md`（或指定补充的现有路径）
+- 宪法文档：`./constitution.md`（或指定补充的现有路径）
 - 如生成项目级规则文件：写入仓库内约定位置，并在宪法中记录路径与差异
 
 > 注：`constitution.md` 已默认加载 `old_base`/`new_base`/`data_rule`，生成时会继承这些基线约束；采集脚本应依据实际文件类型动态生成，而非写死语言。

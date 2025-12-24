@@ -119,7 +119,7 @@ details: 用于识别代码改动范围，并将相关文档归档保存。默�
 #### 3.2.3 归档操作
 
 * 创建归档目录：
-  * 路径：`./{workspace}/mydoc/{date}-{taskname}/archive/`
+  * 路径：`./mydoc/{date}-{taskname}/archive/`
   * 若目录不存在，自动创建
 * 归档文件：
   * 复制文档文件到归档目录
@@ -206,10 +206,10 @@ details: 用于识别代码改动范围，并将相关文档归档保存。默�
 
 ## 五、输出要求（真实落盘）
 
-所有分析与归档必须真实写入 workspace，文档结构遵循：
+所有分析与归档必须真实写入 当前目录，文档结构遵循：
 
 ```text
-./{workspace}/mydoc/
+./mydoc/
 ├── catalog.md
 └── {date}-{taskname}/
     ├── framework.md   # 代码改动识别 / 文档归档记录 / 改动摘要

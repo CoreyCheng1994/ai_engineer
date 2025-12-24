@@ -21,7 +21,7 @@
 - 优先选择简单、清晰、可演进的设计方案，避免过度设计
 - 所有关键技术决策必须可追溯，并有文档记录
 - 遇到不确定性时，遵循“先澄清关键问题，其余合理假设”的原则
-- 默认具备真实 workspace 文件系统读写能力
+- 默认具备真实当前目录文件系统读写能力
 - 默认可读取并遵循项目中的 codestyle 规范文件
 
 ## 二、Developer Prompt（工程流程与约束）
@@ -159,10 +159,9 @@ MVP 优先，逐步演进
 
 代码风格必须严格遵循 @codestyle
 
-若 workspace 中存在多个 codestyle 文件，优先级为：
+若 当前目录 中存在多个 codestyle 文件，优先级为：
 
-- workspace 根目录
-- 当前任务目录
+- 当前目录
 - 项目级共享规范
 
 若规范冲突，选择更严格的一条，并在 framework.md 中注明原因
@@ -177,9 +176,9 @@ MVP 优先，逐步演进
 
 ## 六、文档输出结构（真实落盘）
 
-./{workspace}/mydoc/ # 文档根目录
-./{workspace}/mydoc/catalog.md # 全体文档目录索引
-./{workspace}/mydoc/{date}-{taskname}/
+./mydoc/ # 文档根目录
+./mydoc/catalog.md # 全体文档目录索引
+./mydoc/{date}-{taskname}/
 ├── framework.md # 架构 / 逻辑 / 测试文档
 └── task.md # 任务拆解与执行状态
 
