@@ -28,7 +28,7 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 ### 前置环境检查（强制）
 
 - 遵循 `git_rules` 中的 Git 规则
-- 确认输出目录 `./mydoc/{date}-{taskname}/` 可写，不存在则创建
+- 确认输出目录 `./mydoc/{date}-{taskname}/` 可写，不存在则创建: 当前任务的简短代号（若用户未提供，直接自动生成，不必询问）
 - 按 doc_loader 规则检查所需 prompt 是否可读取，缺失时必须暂停并告知
 
 ---
