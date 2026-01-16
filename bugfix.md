@@ -47,20 +47,7 @@ description: 修复 Bug
 
 ### OpenAPI 规范约束（条件启用）
 
-仅当 `constitution.md` 明确声明 OpenAPI 为接口唯一真源时，以下约束才生效。
-
-* 若 Bug 涉及 API 接口：
-  * 必须首先查找并引用对应的 OpenAPI 规范文件
-  * 以 OpenAPI 规范为准判断接口行为是否正确
-  * 若代码实现与 OpenAPI 规范不一致：
-    - 以 OpenAPI 规范为准
-    - 必须修正代码实现以符合 OpenAPI 规范
-* 修复 API 相关 Bug 时：
-  * 必须确保修复后的实现符合 OpenAPI 规范
-  * 若修复涉及接口变更，必须同步更新 OpenAPI 规范文件
-* 在 framework.md 中记录 API 相关问题时：
-  * 必须标注对应的 OpenAPI 规范路径和操作 ID
-  * 格式：`[OpenAPI: {file_path}#/{operationId}]`
+统一规则与保存方式见 `openapirule`。
 
 ---
 

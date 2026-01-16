@@ -15,6 +15,7 @@ details:  支持从多种信息来源理解需求，强制识别是否存在旧�
    - ${git_rules}
    - ${codestyle}
    - ${data_rule}
+   - ${openapirule}
    - ${constitution}（如存在，项目级基础规则）
 
 2. 我将提供一个新功能需求以及需求信息来源，其信息来源可能包括：
@@ -54,23 +55,7 @@ details:  支持从多种信息来源理解需求，强制识别是否存在旧�
 ```
 
 ### OpenAPI 规范约束（条件启用）
-
-仅当 `constitution.md` 明确声明 OpenAPI 为接口唯一真源时，以下约束才生效。
-
-* 所有 API 接口设计必须基于 OpenAPI 规范文件
-* 在实现 API 接口前：
-  * 必须首先查找并引用对应的 OpenAPI 规范文件
-  * 若 OpenAPI 规范不存在，必须先创建或更新 OpenAPI 规范
-  * 不得基于代码、文档或其他来源自行推断接口定义
-* 在 framework.md 中设计接口时：
-  * 必须标注对应的 OpenAPI 规范路径和操作 ID
-  * 格式：`[OpenAPI: {file_path}#/{operationId}]`
-* 若发现代码实现与 OpenAPI 规范不一致：
-  * 以 OpenAPI 规范为准
-  * 必须修正代码实现以符合 OpenAPI 规范
-* 所有新增或修改的 API 接口：
-  * 必须同步更新 OpenAPI 规范文件
-  * 确保 OpenAPI 规范始终反映最新的接口定义
+  如果满足openapi的启用规则，则必须基于OpenAPI规范定义接口。
 
 ------
 
@@ -247,10 +232,9 @@ details:  支持从多种信息来源理解需求，强制识别是否存在旧�
 
 ### 4. 接口与数据设计
 - 对外接口
-  - 若宪法启用 OpenAPI 唯一真源：必须基于 OpenAPI 规范，[OpenAPI: {file_path}#/{operationId}]
-  - 若宪法启用 OpenAPI 唯一真源且规范不存在，必须先创建
+  - 若启用openapi,则必须基于OpenAPI规范定义接口。
 - 核心数据结构
-  - 若宪法启用 OpenAPI 唯一真源：请求/响应结构必须与 OpenAPI 规范一致
+  - 基于 ${data_rule}
 
 ### 5. 行为说明
 - 正常流程

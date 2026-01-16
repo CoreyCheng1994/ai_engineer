@@ -1,0 +1,31 @@
+# OpenAPI 规则（条件启用）
+
+## 启用条件
+
+仅当 `constitution.md` 的 ## Config 层配置 `use_openapi=true` 时，本规则生效。
+
+## 规范使用
+
+- 所有 API 接口定义与设计必须基于 OpenAPI 规范文件
+- 在实现或设计前，必须先查找并引用对应的 OpenAPI 规范文件
+- 禁止基于代码、文档或其他来源自行推断接口定义
+- 若 OpenAPI 规范不存在或过时，必须先创建或更新；无法当场补齐时，在当前文档标注为“缺失 OpenAPI 规范”，并作为澄清问题提出
+
+## 引用格式
+
+- 必须标注对应的 OpenAPI 规范路径与 operationId
+- 格式：`[OpenAPI: {file_path}#/{operationId}]`
+
+## 一致性
+
+- 若发现代码实现与 OpenAPI 规范不一致，以 OpenAPI 规范为准并修正实现
+- 所有新增或修改的 API 接口必须同步更新 OpenAPI 规范文件，保持最新
+
+## 保存规则
+
+```text
+./openapi/
+└── {modules}/
+    └── {biz}/
+        └── {api}.md
+```

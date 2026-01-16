@@ -74,22 +74,7 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 
 ## 四.五、OpenAPI 规范约束（条件启用）
 
-仅当 `constitution.md` 明确声明 OpenAPI 为接口唯一真源时，以下约束才生效。
-
-* 所有 API 接口定义必须基于 OpenAPI 规范文件
-* 若需求涉及 API 接口：
-  * 必须首先查找并引用对应的 OpenAPI 规范文件
-  * 不得基于代码、文档或其他来源自行推断接口定义
-  * 若 OpenAPI 规范不存在或过时，必须：
-    - 在 spec.md 中明确标注为"缺失 OpenAPI 规范"
-    - 将其作为澄清问题提出
-    - 建议创建或更新 OpenAPI 规范
-* 在 spec.md 中引用 API 时：
-  * 必须标注对应的 OpenAPI 规范路径和操作 ID
-  * 格式：`[OpenAPI: {file_path}#/{operationId}]`
-* 若发现代码实现与 OpenAPI 规范不一致：
-  * 以 OpenAPI 规范为准
-  * 在 spec.md 中标注不一致点，并建议修正代码实现
+统一规则与保存方式见 `openapirule.md`。
 
 ---
 

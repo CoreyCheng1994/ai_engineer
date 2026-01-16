@@ -234,7 +234,7 @@ details: 用于识别代码改动范围，并将相关文档归档保存。默�
 ```text
 请使用 use_fix 流程识别代码改动并归档以下文档：
 - ./mydoc/2024-01-01-feature/spec.md
-- ./docs/api/openapi.yaml
+- ./openapi/{modules}/{biz}/{api}.md
 ```
 
 ---
@@ -248,4 +248,3 @@ use_fix 流程被视为成功，必须满足：
 - 成功归档相关文档
 - 归档信息完整记录
 - 改动摘要清晰可读
-
