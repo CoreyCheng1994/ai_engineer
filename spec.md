@@ -74,7 +74,7 @@ details: 工程化转化为 AI 友好的结构化需求文档（spec.md）。 �
 
 ## 四.五、OpenAPI 规范约束（条件启用）
 
-统一规则与保存方式见 `openapirule.md`。
+统一规则与保存方式见 `openapirule`。
 
 ---
 
